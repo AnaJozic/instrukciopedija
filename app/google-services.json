@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1030276772345",
+    "project_id": "instrukciopedijaapp",
+    "storage_bucket": "instrukciopedijaapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1030276772345:android:f371067c312502188f4d28",
+        "android_client_info": {
+          "package_name": "com.example.instrukciopedijaapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1030276772345-6lbsgti3m8196paa4qs16l2dpki91cdt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAio6RdRkakizQWdaFaH6GUWbTQPrqw0i0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1030276772345-6lbsgti3m8196paa4qs16l2dpki91cdt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
