@@ -28,7 +28,7 @@ import java.util.Map;
 
 public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivity {
 
-    private FirebaseAuth mAuth;
+    FirebaseAuth mAuth;
     FirebaseFirestore mStore;
 
     FirebaseDatabase database;

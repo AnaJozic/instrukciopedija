@@ -6,16 +6,36 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class LoginActivity extends AppCompatActivity {
 
-
+    EditText email_login, password_login;
+    Button button_prijava, button, button_regInstruktor;
     Button reg;
-    Button btn_register_instruktor;
+
+    boolean valid = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        email_login = findViewById(R.id.editText);
+        password_login = findViewById(R.id.editText2);
+        button_prijava = findViewById(R.id.button_prijava);
+        button = findViewById(R.id.button);
+        button_regInstruktor = findViewById(R.id.button_regInstruktor);
+        reg = findViewById(R.id.reg);
+
+
+        checkField(email_login);
+        checkField(password_login);
+
+
+
+
+
 
 
         Button btn_register_instruktor;
@@ -49,6 +69,15 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(register_intent);
     }
 
+    public boolean checkField(EditText textField){
+        if(textField.getText().toString().isEmpty()){
+            textField.setError("Error");
+            valid = false;
+        } else{
+            valid = true;
+        }
+        return valid;
+    }
 
 
 
