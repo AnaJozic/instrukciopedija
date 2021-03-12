@@ -15,8 +15,14 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RegisterUserActivity extends AppCompatActivity {
+
+
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
 
     private EditText korisnicko_ime_instruktora, korisnicki_email_instruktora, korisnicki_telefon_instruktora, korisnicka_lokacija_instruktora, lozinka_instruktora;
     private ImageView slika_instruktora;
@@ -28,12 +34,15 @@ public class RegisterUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_user);
 
+
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
         korisnicko_ime_instruktora = findViewById(R.id.korisnicko_ime_instruktora);
         korisnicki_email_instruktora = findViewById(R.id.korisnicki_email_instruktora);
         korisnicki_telefon_instruktora = findViewById(R.id.korisnicki_telefon_instruktora);
         korisnicka_lokacija_instruktora = findViewById(R.id.korisnicka_lokacija_instruktora);
         lozinka_instruktora = findViewById(R.id.lozinka_instruktora);
-        slika_instruktora = findViewById(R.id.slika_instruktora);
 
 
         button_dalje = findViewById(R.id.button_dalje);
@@ -66,7 +75,8 @@ public class RegisterUserActivity extends AppCompatActivity {
             showError(lozinka_instruktora, "Password must be at least 7 characters long!");
         }
         else{
-                Toast.makeText(this, "good", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "User Created", Toast.LENGTH_SHORT).show();
+
         }
 
     }
