@@ -113,8 +113,9 @@ public class RegisterUserActivity extends AppCompatActivity {
                             instructorInfo.put("Password", lozinka_instruktora.getText().toString());
 
                             instructorInfo.put("UserType", "Instruktor");
-                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").push().setValue(instructorInfo);
+
                             df.set(instructorInfo);
+                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").push().setValue(instructorInfo);
                             startActivity(new Intent(RegisterUserActivity.this, SubjectChoicesActivity.class));
                             finish();
                         } else {

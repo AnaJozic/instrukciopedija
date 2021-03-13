@@ -1,16 +1,22 @@
 package com.example.instrukciopedijaapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,9 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     Button button_prijava, button, button_regInstruktor;
     Button reg;
 
-    private FirebaseAuth mauth;
+    private FirebaseAuth mAuth;
 
-    boolean valid = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         reg = findViewById(R.id.reg);
 
 
-
-        checkField(email_login);
-        checkField(password_login);
-
-        mauth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
 
 
 
@@ -50,9 +51,7 @@ public class LoginActivity extends AppCompatActivity {
         button_prijava.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = email_login.getText().toString();
-                String password = password_login.getText().toString();
-                loginUser(email, password);
+                loginUser();
             }
         });
 
@@ -88,27 +87,45 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    private void loginUser(String email, String password) {
-        mauth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+    private void loginUser() {
+        String email = email_login.getText().toString().trim();
+        String password = password_login.getText().toString().trim();
+
+        if (email.isEmpty()){
+            email_login.setError("Email is required!");
+            email_login.requestFocus();
+            return;
+        }
+        if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            email_login.setError("Please enter valid email!");
+            email_login.requestFocus();
+            return;
+        }
+        if(password.isEmpty()){
+            password_login.setError("Password is required!");
+            password_login.requestFocus();
+            return;
+        }
+        if(password.length()<6){
+            password_login.setError("Minimal password length is 6 characters!");
+            password_login.requestFocus();
+            return;
+        }
+
+
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onSuccess(AuthResult authResult) {
-                Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                finish();
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                   startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                }
+                else{
+                    Toast.makeText(LoginActivity.this, "Failed to login!", Toast.LENGTH_LONG).show();
+                }
+
             }
         });
     }
-
-    public boolean checkField(EditText textField){
-        if(textField.getText().toString().isEmpty()){
-            textField.setError("Error");
-            valid = false;
-        } else{
-            valid = true;
-        }
-        return valid;
-    }
-
 
 
 
