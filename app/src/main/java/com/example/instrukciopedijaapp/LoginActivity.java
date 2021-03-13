@@ -4,15 +4,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
 
     EditText email_login, password_login;
     Button button_prijava, button, button_regInstruktor;
     Button reg;
+
+    private FirebaseAuth mauth;
 
     boolean valid = true;
 
@@ -29,11 +38,23 @@ public class LoginActivity extends AppCompatActivity {
         reg = findViewById(R.id.reg);
 
 
+
         checkField(email_login);
         checkField(password_login);
 
+        mauth = FirebaseAuth.getInstance();
 
 
+
+
+        button_prijava.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = email_login.getText().toString();
+                String password = password_login.getText().toString();
+                loginUser(email, password);
+            }
+        });
 
 
 
@@ -43,7 +64,9 @@ public class LoginActivity extends AppCompatActivity {
         btn_register_instruktor.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openRegisterActivity();
+                Intent register_intent;
+                register_intent = new Intent(LoginActivity.this, RegisterUserActivity.class);
+                startActivity(register_intent);
             }
 
 
@@ -62,11 +85,18 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+
     }
-    public void openRegisterActivity() {
-        Intent register_intent;
-        register_intent = new Intent(this, RegisterUserActivity.class);
-        startActivity(register_intent);
+
+    private void loginUser(String email, String password) {
+        mauth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+            @Override
+            public void onSuccess(AuthResult authResult) {
+                Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                finish();
+            }
+        });
     }
 
     public boolean checkField(EditText textField){

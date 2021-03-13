@@ -1,6 +1,8 @@
 
 package com.example.instrukciopedijaapp;
 
+
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +22,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -31,7 +35,6 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
     FirebaseAuth mAuth;
     FirebaseFirestore mStore;
 
-    FirebaseDatabase database;
 
 
 
@@ -120,7 +123,9 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
                             userInfo.put("Location", korisnicka_lokacija.getText().toString());
                             userInfo.put("Password", registriraj_se_kao_korisnik.getText().toString());
 
-                            userInfo.put("isUser", "2");
+                            userInfo.put("UserType", "Korisnik");
+                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Korisnik").push().setValue(userInfo);
+
 
                             df.set(userInfo);
                             startActivity(new Intent(RegisterKorisnikActivity.this, LoginActivity.class));

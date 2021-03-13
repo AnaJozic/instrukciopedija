@@ -1,20 +1,33 @@
 <resources>
     <string name="app_name">instrukciopedijaapp</string>
-    <string name="prijavi_se">Prijavi se</string> //log in
-    <string name="registriraj_se_kao_korisnik">Registrirajte se kao korisnik</string> //Register as user
-    <string name="registriraj_se_kao_instruktor">Registrirajte se kao instruktor</string> //register as instructor
-    <string name="lozinka">Lozinka</string> //password
+    <string name="prijavi_se">Prijavi se</string>
+    //log in
+    <string name="registriraj_se_kao_korisnik">Registrirajte se kao korisnik</string>
+    //Register as user
+    <string name="registriraj_se_kao_instruktor">Registrirajte se kao instruktor</string>
+    //register as instructor
+    <string name="lozinka">Lozinka</string>
+    //password
     <string name="e_mail">E-mail</string>
-    <string name="zaboravili_ste_lozinku">Zaboravili ste lozinku?</string> //forgotten your password?
-    <string name="Registrirajte_se_ako_nemate_račun">Nemate korisnički račun? <b>Registrirajte se</b></string> //dont have an account? register!
+    <string name="zaboravili_ste_lozinku">Zaboravili ste lozinku?</string>
+    //forgotten your password?
+    <string name="Registrirajte_se_ako_nemate_račun">Nemate korisnički račun? <b>Registrirajte se</b></string>
+    //dont have an account? register!
     <string name="todo">TODO</string>
-    <string name="ne_sada">ne sada</string> //not now
-    <string name="reg__kao_korisnik_string">Registrirajte se kao korisnik</string> //register as a user //idk why there are two :)
+    <string name="ne_sada">ne sada</string>
+    //not now
+    <string name="reg__kao_korisnik_string">Registrirajte se kao korisnik</string>
+    //register as a user //idk why there are two :)
     <string name="todo1">TODO</string>
-    <string name="izaberite_predmete">Izaberite predmete</string> //subject choose
-    <string name="fizika">Fizika</string> //physics
-    <string name="lektire">Lektire</string> //reading
-    <string name="dalje">dalje</string> //next
-    <string name="registriraj_se">Registriraj se</string> //register (informal)
+    <string name="izaberite_predmete">Izaberite predmete</string>
+    //subject choose
+    <string name="fizika">Fizika</string>
+    //physics
+    <string name="lektire">Lektire</string>
+    //reading
+    <string name="dalje">dalje</string>
+    //next
+    <string name="registriraj_se">Registriraj se</string>
+    //register (informal)
     <string name="korisnicko_ime">Korisničko ime</string>//username
 </resources>

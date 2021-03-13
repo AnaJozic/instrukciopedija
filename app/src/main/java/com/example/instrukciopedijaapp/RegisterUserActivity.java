@@ -22,6 +22,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -111,8 +112,8 @@ public class RegisterUserActivity extends AppCompatActivity {
                             instructorInfo.put("Location", korisnicka_lokacija_instruktora.getText().toString());
                             instructorInfo.put("Password", lozinka_instruktora.getText().toString());
 
-                            instructorInfo.put("isInstructor", "1");
-
+                            instructorInfo.put("UserType", "Instruktor");
+                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").push().setValue(instructorInfo);
                             df.set(instructorInfo);
                             startActivity(new Intent(RegisterUserActivity.this, SubjectChoicesActivity.class));
                             finish();
