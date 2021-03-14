@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">instrukciopedijaapp</string>
     <string name="prijavi_se">Prijavi se</string>
     //log in
@@ -19,7 +19,6 @@
     <string name="reg__kao_korisnik_string">Registrirajte se kao korisnik</string>
     //register as a user //idk why there are two :)
     <string name="todo1">TODO</string>
-    <string name="izaberite_predmete">Izaberite predmete</string>
     //subject choose
     <string name="fizika">Fizika</string>
     //physics
