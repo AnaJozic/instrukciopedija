@@ -25,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.UserInfo;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.Query;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -46,7 +47,8 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
     EditText korisnicka_lokacija;
     EditText registriraj_se_kao_korisnik;
     Button button_reg_korisnik;
-    boolean valid = true;
+
+    
 
 
     Button back_btn_2;
@@ -59,6 +61,7 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
 
         mAuth = FirebaseAuth.getInstance();
         mStore = FirebaseFirestore.getInstance();
+
 
 
         korisnicko_ime = findViewById(R.id.korisnicko_ime);
@@ -100,6 +103,7 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
             showError(registriraj_se_kao_korisnik, "Password must be at least 7 characters long!");
 
         } else {
+
             registerUser(email, password);
         }
 
@@ -126,7 +130,7 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
                             userInfo.put("Password", registriraj_se_kao_korisnik.getText().toString());
 
                             userInfo.put("UserType", "Korisnik");
-                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").updateChildren(userInfo);
+                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Korisnik").updateChildren(userInfo);
 
 
 

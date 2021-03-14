@@ -4,8 +4,226 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    android:background="@drawable/grad_bg">
+    tools:context=".SubjectChoicesActivity"
+    android:background="@drawable/grad_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10"
+        android:orientation="vertical">
+
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="13dp"
+            android:layout_marginLeft="13dp"
+            android:background="@drawable/button_back"
+            app:backgroundTint="#00FFFFFF"
+            app:backgroundTintMode="add" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/izaberite_predmete"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textColor="@color/white"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/chivo_light"/>
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:columnCount="3"
+            android:layout_gravity="center">
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/button_one"
+                android:backgroundTint="#00FFFFFF"
+                android:backgroundTintMode="add"/>
+
+
+        </GridLayout>
+
+    </LinearLayout>
 
 
 </ScrollView>

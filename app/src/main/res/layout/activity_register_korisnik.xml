@@ -137,9 +137,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="13dp"
         android:background="@drawable/ic_back"
         app:backgroundTint="#FFFFFF"
         tools:ignore="RtlHardcoded"
@@ -167,13 +167,6 @@
         android:textColor="#FFFFFF"
         android:textSize="26sp"
         tools:ignore="HardcodedText,RtlHardcoded" />
-
-    <EditText
-        android:id="@+id/editTextPhone2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="phone" />
 
 
 </RelativeLayout>
