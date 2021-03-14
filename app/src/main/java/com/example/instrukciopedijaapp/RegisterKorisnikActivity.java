@@ -130,7 +130,7 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
                             userInfo.put("Password", registriraj_se_kao_korisnik.getText().toString());
 
                             userInfo.put("UserType", "Korisnik");
-                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Korisnik").updateChildren(userInfo);
+                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Korisnik").push().setValue(userInfo);
 
 
 
