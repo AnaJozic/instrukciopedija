@@ -106,6 +106,7 @@
             android:id="@+id/button_reg_korisnik"
             android:layout_width="match_parent"
             android:layout_height="@dimen/height_58"
+
             android:layout_below="@+id/registracija_korisnika_layout"
             android:layout_alignStart="@+id/registracija_korisnika_layout"
             android:layout_alignEnd="@+id/registracija_korisnika_layout"
