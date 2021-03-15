@@ -68,7 +68,8 @@
                 android:padding="3dp"
                 android:layout_gravity="center"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                />
 
             <Button
                 android:id="@+id/lektire_btn"
