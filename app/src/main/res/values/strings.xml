@@ -30,5 +30,6 @@
     //register (informal)
     <string name="korisnicko_ime">Korisničko ime</string>
     <string name="title">Title</string>
-    <string name="izaberite_predmete">Izaberite predmete</string>//username
+    <string name="izaberite_predmete">Izaberite predmete</string>
+    <string name="registrirajte_se">Registrirajte se</string>//username
 </resources>

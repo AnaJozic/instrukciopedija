@@ -31,6 +31,7 @@
             android:layout_marginBottom="16dp"
             android:background="@drawable/input_bg"
             android:drawablePadding="16dp"
+            android:textColor="#FF808080"
             android:elevation="5sp"
             android:fontFamily="@font/chivo_light"
             android:hint="Korisničko ime"
@@ -50,6 +51,7 @@
             android:fontFamily="@font/chivo_light"
             android:hint="E-mail"
             android:inputType="text"
+            android:textColor="#FF808080"
             android:paddingLeft="16dp"
             android:textColorHint="#FF808080" />
 
@@ -65,6 +67,7 @@
             android:fontFamily="@font/chivo_light"
             android:hint="Telefon"
             android:inputType="phone"
+            android:textColor="#FF808080"
             android:paddingLeft="16dp"
             android:textColorHint="#FF808080" />
 
@@ -80,6 +83,7 @@
             android:fontFamily="@font/chivo_light"
             android:hint="Lokacija"
             android:inputType="textPostalAddress"
+            android:textColor="#FF808080"
             android:paddingLeft="16dp"
             android:textColorHint="#FF808080" />
 
