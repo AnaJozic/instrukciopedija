@@ -63,6 +63,7 @@
                 android:backgroundTintMode="add"
                 android:drawableTop="@drawable/ic_atom"
                 android:text="Fizika"
+                android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
@@ -87,7 +88,8 @@
                 android:backgroundTintMode="add"
                 android:layout_gravity="center"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/matematika_btn"
@@ -101,11 +103,12 @@
                 android:layout_gravity="center"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
-                android:padding="3dp"
+                android:padding="2dp"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/hrvatski_btn"
@@ -113,17 +116,18 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_four"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_hrvatski"
+                android:text="Hrvatski"
                 android:textSize="12sp"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:layout_gravity="center"
-                android:padding="3dp"
+                android:padding="10dp"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/ekonomija_btn"
@@ -131,8 +135,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_five"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_ekonomija"
+                android:text="Ekonomija"
                 android:textSize="12sp"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
@@ -141,7 +145,8 @@
                 android:layout_gravity="center"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/glazbeni_btn"
@@ -149,8 +154,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_six"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_glazbeni"
+                android:text="Glazbeni"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -159,7 +164,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/arhitektura_btn"
@@ -167,17 +173,18 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_one"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
-                android:textSize="12sp"
-                android:padding="3dp"
+                android:drawableTop="@drawable/ic_arhitekt"
+                android:text="Arhitektura"
+                android:textSize="11sp"
+                android:padding="2dp"
                 android:layout_gravity="center"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/programiranje_btn"
@@ -185,17 +192,18 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_two"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
-                android:padding="3dp"
+                android:drawableTop="@drawable/ic_programiranje"
+                android:text="Programiranje"
+                android:padding="1dp"
                 android:layout_gravity="center"
-                android:textSize="12sp"
+                android:textSize="10sp"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/povijest_btn"
@@ -203,8 +211,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_three"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_povijest"
+                android:text="Povijest"
                 android:textSize="12sp"
                 android:textAllCaps="false"
                 android:padding="3dp"
@@ -213,7 +221,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/likovni_btn"
@@ -221,8 +230,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_four"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_likovni"
+                android:text="Likovni"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -231,25 +240,27 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/racunovodstvo_btn"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
-                android:padding="3dp"
+                android:paddingBottom="0dp"
                 android:layout_gravity="center"
                 android:background="@drawable/button_five"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
-                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_racunovodstvo"
+                android:text="Računovodstvo"
+                android:textSize="10sp"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/njemacki_btn"
@@ -259,15 +270,16 @@
                 android:padding="3dp"
                 android:layout_gravity="center"
                 android:background="@drawable/button_six"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_jezik"
+                android:text="Njemački"
                 android:textSize="12sp"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/francuski_btn"
@@ -275,8 +287,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_one"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_jezik"
+                android:text="Francuski"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -285,7 +297,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/talijanski_btn"
@@ -293,8 +306,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_two"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_jezik"
+                android:text="Talijanski"
                 android:padding="3dp"
                 android:layout_gravity="center"
                 android:textSize="12sp"
@@ -303,7 +316,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/engleski_btn"
@@ -311,8 +325,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_three"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_jezik"
+                android:text="Engleski"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -321,7 +335,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/ruski_btn"
@@ -329,8 +344,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_four"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_jezik"
+                android:text="Ruski"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -339,7 +354,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/ostali_strani_jezici"
@@ -347,17 +363,21 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_five"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
-                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_jezik"
+                android:text="Ostali jezici"
+                android:textSize="11sp"
                 android:textAllCaps="false"
                 android:padding="3dp"
+                android:paddingBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/kemija_btn"
@@ -365,8 +385,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_six"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_kemija"
+                android:text="Kemija"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -375,7 +395,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/elektrotehnika_btn"
@@ -383,17 +404,18 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_one"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
-                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_elektrotehnika"
+                android:text="Elektrotehnika"
+                android:textSize="9sp"
                 android:textAllCaps="false"
-                android:padding="3dp"
+                android:padding="1dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/strojarstvo_btn"
@@ -401,17 +423,18 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_two"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
-                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_strojarstvo"
+                android:text="Strojarstvo"
+                android:textSize="10sp"
                 android:textAllCaps="false"
-                android:padding="3dp"
+                android:padding="0dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/geografija_btn"
@@ -419,8 +442,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_three"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_geografija"
+                android:text="Geografija"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -429,7 +452,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/biologija_btn"
@@ -437,8 +461,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_four"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_biologija"
+                android:text="Biologija"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -447,7 +471,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/informatika_btn"
@@ -455,17 +480,18 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_five"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
-                android:textSize="12sp"
+                android:drawableTop="@drawable/ic_informatika"
+                android:text="Informatika"
+                android:textSize="10sp"
                 android:textAllCaps="false"
-                android:padding="3dp"
+                android:padding="0dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/sociologija_btn"
@@ -473,17 +499,18 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_six"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_sociologija"
+                android:text="Sociologija"
                 android:textSize="12sp"
                 android:textAllCaps="false"
-                android:padding="3dp"
+                android:padding="0dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/medicina_btn"
@@ -491,8 +518,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_one"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_medicina"
+                android:text="Medicina"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -501,7 +528,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/drzavna_matura__btn"
@@ -509,8 +537,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_two"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_matura"
+                android:text="Matura"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -519,7 +547,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/pravo_btn"
@@ -527,8 +556,8 @@
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
                 android:background="@drawable/button_three"
-                android:drawableTop="@drawable/ic_atom"
-                android:text="Fizika"
+                android:drawableTop="@drawable/ic_pravo"
+                android:text="Pravo"
                 android:textSize="12sp"
                 android:padding="3dp"
                 android:layout_gravity="center"
@@ -537,7 +566,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
 
 

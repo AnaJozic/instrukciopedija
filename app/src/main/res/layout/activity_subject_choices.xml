@@ -63,6 +63,7 @@
                 android:backgroundTintMode="add"
                 android:drawableTop="@drawable/ic_atom"
                 android:text="Fizika"
+                android:textColor="@color/white"
                 android:textSize="12sp"
                 android:textAllCaps="false"
                 android:fontFamily="@font/chivo_bold"
@@ -87,7 +88,8 @@
                 android:backgroundTintMode="add"
                 android:layout_gravity="center"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/matematika_btn"
@@ -105,7 +107,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/hrvatski_btn"
@@ -123,7 +126,8 @@
                 android:padding="10dp"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/ekonomija_btn"
@@ -141,7 +145,8 @@
                 android:layout_gravity="center"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/glazbeni_btn"
@@ -159,7 +164,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/arhitektura_btn"
@@ -177,7 +183,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/programiranje_btn"
@@ -195,7 +202,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/povijest_btn"
@@ -213,7 +221,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/likovni_btn"
@@ -231,7 +240,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/racunovodstvo_btn"
@@ -249,7 +259,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/njemacki_btn"
@@ -267,7 +278,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/francuski_btn"
@@ -285,7 +297,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/talijanski_btn"
@@ -303,7 +316,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/engleski_btn"
@@ -321,7 +335,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/ruski_btn"
@@ -339,7 +354,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/ostali_strani_jezici"
@@ -352,12 +368,16 @@
                 android:textSize="11sp"
                 android:textAllCaps="false"
                 android:padding="3dp"
+                android:paddingBottom="0dp"
+                android:paddingLeft="0dp"
+                android:paddingRight="0dp"
                 android:layout_gravity="center"
                 android:fontFamily="@font/chivo_bold"
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/kemija_btn"
@@ -375,7 +395,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/elektrotehnika_btn"
@@ -393,7 +414,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/strojarstvo_btn"
@@ -411,7 +433,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/geografija_btn"
@@ -429,7 +452,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/biologija_btn"
@@ -447,7 +471,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/informatika_btn"
@@ -465,7 +490,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/sociologija_btn"
@@ -483,7 +509,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/medicina_btn"
@@ -501,7 +528,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/drzavna_matura__btn"
@@ -519,7 +547,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
             <Button
                 android:id="@+id/pravo_btn"
@@ -537,7 +566,8 @@
                 android:backgroundTint="#00FFFFFF"
                 android:backgroundTintMode="add"
                 app:backgroundTint="#00FFFFFF"
-                app:backgroundTintMode="add" />
+                app:backgroundTintMode="add"
+                android:textColor="@color/white"/>
 
 
 
