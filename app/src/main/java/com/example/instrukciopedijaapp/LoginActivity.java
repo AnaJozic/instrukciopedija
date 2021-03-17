@@ -2,6 +2,7 @@ package com.example.instrukciopedijaapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import android.content.Context;
 import android.content.Intent;
@@ -29,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText email_login, password_login;
     Button button_prijava, button, button_regInstruktor;
-    Button reg;
+    Button reg, ne_sada;
     CheckBox zapamti_me;
 
     private FirebaseAuth mAuth;
@@ -51,6 +52,7 @@ public class LoginActivity extends AppCompatActivity {
         button_regInstruktor = findViewById(R.id.button_regInstruktor);
         reg = findViewById(R.id.reg);
         zapamti_me = findViewById(R.id.zapamti_me);
+        ne_sada = findViewById(R.id.ne_sada);
 
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String checkbox = preferences.getString("remember", "");
@@ -59,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         }
         else if(checkbox.equals("false")){
-            Toast.makeText(this, "Please sign in!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Molim Vas prijavite se!", Toast.LENGTH_SHORT).show();
         }
 
 
@@ -82,14 +84,14 @@ public class LoginActivity extends AppCompatActivity {
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("remember", "true");
                     editor.apply();
-                    Toast.makeText(LoginActivity.this, "Checked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Zapamćena prijava", Toast.LENGTH_SHORT).show();
                 }
                 else if(!compoundButton.isChecked()){
                     SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("remember", "false");
                     editor.apply();
-                    Toast.makeText(LoginActivity.this, "Unchecked", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Nezapamćena prijava", Toast.LENGTH_SHORT).show();
                 }
 
             }
@@ -97,7 +99,13 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-
+        ne_sada.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
 
@@ -129,22 +137,22 @@ public class LoginActivity extends AppCompatActivity {
         String password = password_login.getText().toString().trim();
 
         if (email.isEmpty()){
-            email_login.setError("Email is required!");
+            email_login.setError("Email je potreban!");
             email_login.requestFocus();
             return;
         }
         if(!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-            email_login.setError("Please enter valid email!");
+            email_login.setError("Molim Vas unesite ispravan Email!");
             email_login.requestFocus();
             return;
         }
         if(password.isEmpty()){
-            password_login.setError("Password is required!");
+            password_login.setError("Lozinka je potrebna!");
             password_login.requestFocus();
             return;
         }
         if(password.length()<6){
-            password_login.setError("Minimal password length is 6 characters!");
+            password_login.setError("Minimalna duljina lozinke je 6 znakova!");
             password_login.requestFocus();
             return;
         }
@@ -155,14 +163,14 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    Toast.makeText(LoginActivity.this, "Uspješna prijava!", Toast.LENGTH_LONG).show();
                 }
                 else{
-                    Toast.makeText(LoginActivity.this, "Failed to login!", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Neuspješna prijava!", Toast.LENGTH_LONG).show();
                 }
 
             }
         });
-
 
 
     }
