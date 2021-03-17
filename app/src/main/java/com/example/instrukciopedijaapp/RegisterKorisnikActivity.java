@@ -44,7 +44,6 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
     EditText korisnicko_ime;
     EditText korisnicki_email;
     EditText korisnicki_telefon;
-    EditText korisnicka_lokacija;
     EditText registriraj_se_kao_korisnik;
     Button button_reg_korisnik;
 
@@ -67,7 +66,6 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
         korisnicko_ime = findViewById(R.id.korisnicko_ime);
         korisnicki_email = findViewById(R.id.korisnicki_email);
         korisnicki_telefon = findViewById(R.id.korisnicki_telefon);
-        korisnicka_lokacija = findViewById(R.id.korisnicka_lokacija);
         registriraj_se_kao_korisnik = findViewById(R.id.registriraj_se_kao_korisnik);
         button_reg_korisnik = findViewById(R.id.button_reg_korisnik);
 
@@ -95,12 +93,12 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
         String password = registriraj_se_kao_korisnik.getText().toString();
 
         if (username.isEmpty() || username.length() < 6) {
-            showError(korisnicko_ime, "Username not valid!");
+            showError(korisnicko_ime, "Korisničko ime nije ispravno!");
         } else if (email.isEmpty() || !email.contains("@")) {
-            showError(korisnicki_email, "Email is not valid!");
+            showError(korisnicki_email, "Email nije ispravan!");
 
-        } else if (password.isEmpty() || password.length() < 7) {
-            showError(registriraj_se_kao_korisnik, "Password must be at least 7 characters long!");
+        } else if (password.isEmpty() || password.length() < 6) {
+            showError(registriraj_se_kao_korisnik, "Lozinka mora biti najmanje 6 znakova duga!");
 
         } else {
 
@@ -128,7 +126,6 @@ public class RegisterKorisnikActivity<FirebaseDatabase> extends AppCompatActivit
                             userInfo.put("Username", korisnicko_ime.getText().toString());
                             userInfo.put("Email", korisnicki_email.getText().toString());
                             userInfo.put("Phone", korisnicki_telefon.getText().toString());
-                            userInfo.put("Location", korisnicka_lokacija.getText().toString());
                             userInfo.put("Password", registriraj_se_kao_korisnik.getText().toString());
 
                             userInfo.put("UserType", "Korisnik");

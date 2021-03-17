@@ -14,17 +14,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo"
-        tools:ignore="MissingConstraints"
+        app:srcCompat="@drawable/ic_instrukciopedija_logo_transparent_black"
+        tools:ignore="MissingConstraints,VectorDrawableCompat"
         android:contentDescription="@string/todo" />
 
     <Button
         android:id="@+id/ne_sada"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:background="@null"
-        style="@style/Widget.AppCompat.Button.Borderless"
         android:drawablePadding="20dp"
         android:fontFamily="@font/chivo_light"
         android:gravity="center"
@@ -32,6 +32,7 @@
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
+        app:backgroundTint="#00FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.951"
         app:layout_constraintStart_toStartOf="parent"

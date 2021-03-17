@@ -35,7 +35,7 @@ public class RegisterUserActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     FirebaseFirestore mStore;
 
-    private EditText korisnicko_ime_instruktora, korisnicki_email_instruktora, korisnicki_telefon_instruktora, korisnicka_lokacija_instruktora, lozinka_instruktora;
+    private EditText korisnicko_ime_instruktora, korisnicki_email_instruktora, korisnicki_telefon_instruktora, lozinka_instruktora;
     private ImageView slika_instruktora;
     Button button_dalje;
 
@@ -52,7 +52,6 @@ public class RegisterUserActivity extends AppCompatActivity {
         korisnicko_ime_instruktora = findViewById(R.id.korisnicko_ime_instruktora);
         korisnicki_email_instruktora = findViewById(R.id.korisnicki_email_instruktora);
         korisnicki_telefon_instruktora = findViewById(R.id.korisnicki_telefon_instruktora);
-        korisnicka_lokacija_instruktora = findViewById(R.id.korisnicka_lokacija_instruktora);
         lozinka_instruktora = findViewById(R.id.lozinka_instruktora);
 
 
@@ -77,13 +76,13 @@ public class RegisterUserActivity extends AppCompatActivity {
 
         if (username.isEmpty() || username.length()<6)
         {
-            showError(korisnicko_ime_instruktora, "Username not valid!");
+            showError(korisnicko_ime_instruktora, "Korisničko ime nije ispravno!");
         }
         else if (email.isEmpty() || !email.contains("@")){
-            showError(korisnicki_email_instruktora, "Email is not valid!");
+            showError(korisnicki_email_instruktora, "Email nije ispravan!");
         }
-        else if (password.isEmpty() || password.length()<7){
-            showError(lozinka_instruktora, "Password must be at least 7 characters long!");
+        else if (password.isEmpty() || password.length()<6){
+            showError(lozinka_instruktora, "Lozinka mora biti najmanje 6 znakova duga!");
         }
         else{
             registerUser(email, password);
@@ -112,7 +111,6 @@ public class RegisterUserActivity extends AppCompatActivity {
                             instructorInfo.put("Username", korisnicko_ime_instruktora.getText().toString());
                             instructorInfo.put("Email", korisnicki_email_instruktora.getText().toString());
                             instructorInfo.put("Phone", korisnicki_telefon_instruktora.getText().toString());
-                            instructorInfo.put("Location", korisnicka_lokacija_instruktora.getText().toString());
                             instructorInfo.put("Password", lozinka_instruktora.getText().toString());
                             instructorInfo.put("UserType", "Instruktor");
 

@@ -12,12 +12,12 @@
     <LinearLayout
         android:id="@+id/registracija_instruktora_layout"
         android:layout_width="282dp"
-        android:layout_height="500dp"
+        android:layout_height="wrap_content"
 
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="250dp"
-        android:layout_marginRight="@dimen/height_58"
+        android:gravity="center"
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
@@ -67,22 +67,6 @@
             android:fontFamily="@font/chivo_light"
             android:hint="Telefon"
             android:inputType="phone"
-            android:textColor="#FF808080"
-            android:paddingLeft="16dp"
-            android:textColorHint="#FF808080" />
-
-        <EditText
-            android:id="@+id/korisnicka_lokacija_instruktora"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/height_58"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/input_bg"
-            android:drawableLeft="@drawable/ic_placeholder"
-            android:drawablePadding="16dp"
-            android:elevation="5sp"
-            android:fontFamily="@font/chivo_light"
-            android:hint="Lokacija"
-            android:inputType="textPostalAddress"
             android:textColor="#FF808080"
             android:paddingLeft="16dp"
             android:textColorHint="#FF808080" />
