@@ -12,6 +12,9 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
 
@@ -23,6 +26,7 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
             pravo_btn;
 
 
+    private FirebaseAuth mAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +41,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
             }
         });
 
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+        String userId = user.getUid();
 
         fizika_btn = findViewById(R.id.fizika_btn);
         lektire_btn = findViewById(R.id.lektire_btn);
@@ -66,19 +74,13 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         pravo_btn = findViewById(R.id.pravo_btn);
 
 
-
-
-
-
         fizika_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //String predmet = "Fizika";
-                //Intent i = new Intent(SubjectChoicesActivity.this, BottomSheet.class);
-                //i.putExtra("predmet", predmet);
-                //startActivity(i);
-
+                Bundle args = new Bundle();
+                args.putString("predmet", "Fizika");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -86,7 +88,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         matematika_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Matematika");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -94,7 +99,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         hrvatski_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Hrvatski");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -102,7 +110,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         povijest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Povijest");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -110,7 +121,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         likovni_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Likovni");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -118,7 +132,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         njemacki_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Njemacki");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -126,7 +143,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         francuski_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Francuski");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -134,7 +154,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         talijanski_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Talijanski");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -142,7 +165,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         engleski_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Engleski");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -150,7 +176,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         kemija_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Kemija");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -158,7 +187,10 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         biologija_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Biologija");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
@@ -166,10 +198,134 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         informatika_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Informatika");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
+
+
+        pravo_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Pravo");
+                BttomSheetLaw bottomSheetLaw = new BttomSheetLaw();
+                bottomSheetLaw.setArguments(args);
+                bottomSheetLaw.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+        lektire_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BottomSheetLektire bottomSheetLektire = new BottomSheetLektire();
+                bottomSheetLektire.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+//Predmeti sa samo srednjom i faksom
+
+
+        ekonomija_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Ekonomija");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+
+        arhitektura_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Arhitektura");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+        programiranje_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Programiranje");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+        racunovodstvo_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Racunovodstvo");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+        elektrotehnika_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Elektrotehnika");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+        strojarstvo_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Strojarstvo");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+        sociologija_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Sociologija");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+        medicina_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Medicina");
+                BottomSheetFAXSS bottomSheet = new BottomSheetFAXSS();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+
 
 
 

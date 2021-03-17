@@ -1,6 +1,5 @@
 package com.example.instrukciopedijaapp;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +19,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BottomSheet extends BottomSheetDialogFragment {
-    public BottomSheet() {
+public class BottomSheetFAXSS extends BottomSheetDialogFragment {
+    public BottomSheetFAXSS() {
 
     }
     private FirebaseAuth mAuth;
@@ -29,7 +28,7 @@ public class BottomSheet extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.bottom_sheet_layout, container, false);
+        View view = inflater.inflate(R.layout.bottom_sheet_faxss_layout, container, false);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
@@ -53,15 +52,10 @@ public class BottomSheet extends BottomSheetDialogFragment {
                 Map<String, Object> Predmeti = new HashMap<>();
 
 
-                if(os_checkbox.isChecked()){
-                    Predmeti.put(predmet.toString() + "_os", "true");
-                    FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).updateChildren(Predmeti);
-                    Toast.makeText(getContext(), predmet + " za osnovnu školu.", Toast.LENGTH_LONG).show();
-                    dismiss();
-                }
+
                 if(ss_checkbox.isChecked()){
                     Predmeti.put(predmet.toString() + "_ss", "true");
-                   FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).updateChildren(Predmeti);
+                    FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).updateChildren(Predmeti);
                     Toast.makeText(getContext(), predmet + " za srednju školu.", Toast.LENGTH_LONG).show();
                     dismiss();
                 }

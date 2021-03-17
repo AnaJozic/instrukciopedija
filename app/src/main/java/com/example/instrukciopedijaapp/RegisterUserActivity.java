@@ -103,6 +103,9 @@ public class RegisterUserActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
+                            String userString = user.getUid();
+
+
                             Toast.makeText(RegisterUserActivity.this, "Registered user!\n" + user.getEmail(),Toast.LENGTH_SHORT).show();
                             DocumentReference df = mStore.collection("Users").document(user.getUid());
                             Map<String, Object> instructorInfo = new HashMap<>();
@@ -111,11 +114,10 @@ public class RegisterUserActivity extends AppCompatActivity {
                             instructorInfo.put("Phone", korisnicki_telefon_instruktora.getText().toString());
                             instructorInfo.put("Location", korisnicka_lokacija_instruktora.getText().toString());
                             instructorInfo.put("Password", lozinka_instruktora.getText().toString());
-
                             instructorInfo.put("UserType", "Instruktor");
 
                             df.set(instructorInfo);
-                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").push().setValue(instructorInfo);
+                            com.google.firebase.database.FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userString).setValue(instructorInfo);
                             startActivity(new Intent(RegisterUserActivity.this, SubjectChoicesActivity.class));
                             finish();
                         } else {
