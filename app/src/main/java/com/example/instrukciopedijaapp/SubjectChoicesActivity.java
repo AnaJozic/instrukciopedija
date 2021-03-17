@@ -26,6 +26,8 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
             pravo_btn;
 
 
+
+
     private FirebaseAuth mAuth;
 
     @Override
@@ -46,7 +48,11 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
         String userId = user.getUid();
 
+
+
+
         fizika_btn = findViewById(R.id.fizika_btn);
+        glazbeni_btn = findViewById(R.id.glazbeni_btn);
         lektire_btn = findViewById(R.id.lektire_btn);
         matematika_btn = findViewById(R.id.matematika_btn);
         hrvatski_btn = findViewById(R.id.hrvatski_btn);
@@ -72,6 +78,11 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         medicina_btn = findViewById(R.id.medicina_btn);
         drzavna_matura__btn = findViewById(R.id.drzavna_matura__btn);
         pravo_btn = findViewById(R.id.pravo_btn);
+
+
+
+
+
 
 
         fizika_btn.setOnClickListener(new View.OnClickListener() {
@@ -325,7 +336,16 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         });
 
 
-
+        glazbeni_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Glazbeni");
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
 
 
 
