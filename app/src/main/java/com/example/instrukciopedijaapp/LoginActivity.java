@@ -3,13 +3,17 @@ package com.example.instrukciopedijaapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.opengl.Visibility;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -26,8 +30,11 @@ public class LoginActivity extends AppCompatActivity {
     EditText email_login, password_login;
     Button button_prijava, button, button_regInstruktor;
     Button reg;
+    CheckBox zapamti_me;
 
     private FirebaseAuth mAuth;
+
+
 
 
     @Override
@@ -41,12 +48,12 @@ public class LoginActivity extends AppCompatActivity {
         button = findViewById(R.id.button);
         button_regInstruktor = findViewById(R.id.button_regInstruktor);
         reg = findViewById(R.id.reg);
+        zapamti_me = findViewById(R.id.zapamti_me);
+
+
 
 
         mAuth = FirebaseAuth.getInstance();
-
-
-
 
         button_prijava.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,9 +61,6 @@ public class LoginActivity extends AppCompatActivity {
                 loginUser();
             }
         });
-
-
-
 
         Button btn_register_instruktor;
         btn_register_instruktor = (Button) findViewById(R.id.button_regInstruktor);
@@ -67,11 +71,7 @@ public class LoginActivity extends AppCompatActivity {
                 register_intent = new Intent(LoginActivity.this, RegisterUserActivity.class);
                 startActivity(register_intent);
             }
-
-
         });
-
-
 
         reg = findViewById(R.id.reg);
         reg.setOnClickListener(new View.OnClickListener() {
@@ -81,9 +81,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent_reg);
             }
         });
-
-
-
 
     }
 
@@ -125,6 +122,9 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+
+
     }
 
 
