@@ -18,18 +18,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BottomSheetLektire extends BottomSheetDialogFragment {
+public class BottomSheetMatura extends BottomSheetDialogFragment {
     private FirebaseAuth mAuth;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.bottom_sheet_lektire_layout, container, false);
+        View view = inflater.inflate(R.layout.bottom_sheet_matura_layout, container, false);
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String userId = user.getUid();
 
+
+
+        String predmet = getArguments().getString("predmet");
 
 
 
@@ -39,14 +42,16 @@ public class BottomSheetLektire extends BottomSheetDialogFragment {
             public void onClick(View view) {
 
                 Map<String, Object> Predmeti = new HashMap<>();
-                Predmeti.put("Lektire" + "_os", "true");
+                Predmeti.put("Matura" + "_ss", "true");
                 FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).child("Predmeti").updateChildren(Predmeti);
-                Toast.makeText(getContext(), "Lektire dodane u listu.", Toast.LENGTH_LONG).show();
+                Toast.makeText(getContext(), "userString", Toast.LENGTH_LONG).show();
                 dismiss();
             }
         });
 
 
         return view;
+
     }
+
 }

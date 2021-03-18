@@ -55,19 +55,19 @@ public class BottomSheet extends BottomSheetDialogFragment {
 
                 if(os_checkbox.isChecked()){
                     Predmeti.put(predmet.toString() + "_os", "true");
-                    FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).updateChildren(Predmeti);
+                    FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).child("Predmeti").updateChildren(Predmeti);
                     Toast.makeText(getContext(), predmet + " za osnovnu školu.", Toast.LENGTH_LONG).show();
                     dismiss();
                 }
                 if(ss_checkbox.isChecked()){
                     Predmeti.put(predmet.toString() + "_ss", "true");
-                   FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).updateChildren(Predmeti);
+                   FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).child("Predmeti").updateChildren(Predmeti);
                     Toast.makeText(getContext(), predmet + " za srednju školu.", Toast.LENGTH_LONG).show();
                     dismiss();
                 }
                 if(fax_checkbox.isChecked()){
                     Predmeti.put(predmet.toString() + "_fax", "true");
-                    FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).updateChildren(Predmeti);
+                    FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).child("Predmeti").updateChildren(Predmeti);
                     Toast.makeText(getContext(), predmet + " za fakultet.", Toast.LENGTH_LONG).show();
                     dismiss();
                 }

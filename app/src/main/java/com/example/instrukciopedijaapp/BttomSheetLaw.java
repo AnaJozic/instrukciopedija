@@ -44,7 +44,7 @@ public class BttomSheetLaw extends BottomSheetDialogFragment {
 
                 Map<String, Object> Predmeti = new HashMap<>();
                 Predmeti.put("Pravo" + "_fax", "true");
-                FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).updateChildren(Predmeti);
+                FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).child("Predmeti").updateChildren(Predmeti);
                 Toast.makeText(getContext(), "userString", Toast.LENGTH_LONG).show();
                 dismiss();
             }

@@ -12,7 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="10"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
+
 
 
         <Button
@@ -26,27 +28,53 @@
             app:backgroundTint="#FFFFFF" />
 
 
-        <RelativeLayout
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/izaberite_predmete"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:textSize="30sp"
+            android:layout_margin="16dp"
+            android:textColor="@color/white"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/chivo_light"/>
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="150dp">
+            android:layout_height="wrap_content"
+            android:text="@string/izabrani_predmeti"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/chivo_light"
+            android:layout_gravity="center"
+            android:textAlignment="center"
+            />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/izaberite_predmete"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_margin="16dp"
+            tools:context=".SubjectChoicesActivity">
+
+
+            <ListView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:textAlignment="center"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:textColor="@color/white"
-                android:layout_marginTop="50dp"
-                android:fontFamily="@font/chivo_light"/>
+                android:id="@+id/list_id"
+                 />
 
-        </RelativeLayout>
+
+        </LinearLayout>
 
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
             android:columnCount="3"
@@ -570,9 +598,33 @@
                 android:textColor="@color/white"/>
 
 
-
-
         </GridLayout>
+
+        <Button
+            android:id="@+id/reg_kao_innstruktor_final"
+            android:layout_width="268dp"
+            android:layout_height="@dimen/height_58"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginRight="0dp"
+            android:layout_marginBottom="0dp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/chivo_light"
+            android:text="Registrirajte se kao instruktor"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:backgroundTint="#14000000"
+            app:backgroundTintMode="add"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintVertical_bias="0.42" />
+
+
+
 
     </LinearLayout>
 

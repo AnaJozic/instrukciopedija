@@ -1,6 +1,9 @@
 package com.example.instrukciopedijaapp;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -8,13 +11,24 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
 
@@ -24,10 +38,6 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
             engleski_btn, ruski_btn, ostali_strani_jezici, kemija_btn, elektrotehnika_btn, strojarstvo_btn,
             geografija_btn, biologija_btn, informatika_btn, sociologija_btn, medicina_btn, drzavna_matura__btn,
             pravo_btn;
-
-
-
-
     private FirebaseAuth mAuth;
 
     @Override
@@ -47,8 +57,6 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String userId = user.getUid();
-
-
 
 
         fizika_btn = findViewById(R.id.fizika_btn);
@@ -78,11 +86,6 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         medicina_btn = findViewById(R.id.medicina_btn);
         drzavna_matura__btn = findViewById(R.id.drzavna_matura__btn);
         pravo_btn = findViewById(R.id.pravo_btn);
-
-
-
-
-
 
 
         fizika_btn.setOnClickListener(new View.OnClickListener() {
@@ -342,6 +345,18 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
                 Bundle args = new Bundle();
                 args.putString("predmet", "Glazbeni");
                 BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+
+        drzavna_matura__btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Matura");
+                BottomSheetMatura bottomSheet = new BottomSheetMatura();
                 bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }

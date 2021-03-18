@@ -36,5 +36,6 @@
     <string name="srednja_kola">Srednja Škola</string>
     <string name="osnovna_kola">Osnovna Škola</string>
     <string name="fakultet">Fakultet</string>
-    <string name="uredu">Uredu</string>//username
+    <string name="uredu">Uredu</string>
+    <string name="izabrani_predmeti">Izabrani predmeti</string>//username
 </resources>
