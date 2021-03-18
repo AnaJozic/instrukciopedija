@@ -40,36 +40,6 @@
             android:textColor="@color/white"
             android:layout_marginTop="50dp"
             android:fontFamily="@font/chivo_light"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/izabrani_predmeti"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:fontFamily="@font/chivo_light"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:layout_margin="16dp"
-            tools:context=".SubjectChoicesActivity">
-
-
-            <ListView
-                android:id="@+id/list_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:textAlignment="center" />
-
-
-        </LinearLayout>
 
         <GridLayout
             android:layout_width="wrap_content"
@@ -600,7 +570,7 @@
         </GridLayout>
 
         <Button
-            android:id="@+id/reg_kao_innstruktor_final"
+            android:id="@+id/pregled_predmeta"
             android:layout_width="268dp"
             android:layout_height="@dimen/height_58"
             android:layout_gravity="center"
@@ -613,15 +583,14 @@
             android:layout_marginBottom="0dp"
             android:background="@drawable/custom_button"
             android:fontFamily="@font/chivo_light"
-            android:text="Registrirajte se kao instruktor"
+            android:text="@string/pregled_predmeta"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="19sp"
             app:backgroundTint="#14000000"
             app:backgroundTintMode="add"
             app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintVertical_bias="0.42" />
-
 
 
 

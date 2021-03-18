@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Adapter;
@@ -18,6 +19,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.google.common.io.LittleEndianDataInputStream;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -25,21 +27,28 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.internal.bind.ReflectiveTypeAdapterFactory;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Map;
 
-public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
+public class SubjectChoicesActivity extends AppCompatActivity {
 
     Button btn_back;
     Button fizika_btn, lektire_btn, matematika_btn, hrvatski_btn, ekonomija_btn, glazbeni_btn, arhitektura_btn,
             programiranje_btn, povijest_btn, likovni_btn, racunovodstvo_btn, njemacki_btn, francuski_btn, talijanski_btn,
             engleski_btn, ruski_btn, ostali_strani_jezici, kemija_btn, elektrotehnika_btn, strojarstvo_btn,
             geografija_btn, biologija_btn, informatika_btn, sociologija_btn, medicina_btn, drzavna_matura__btn,
-            pravo_btn;
+            pravo_btn, pregled_predmeta;
     private FirebaseAuth mAuth;
-
+    DatabaseReference mRef;
+    ///////////////////////////////////////
+    private ListView list_id;
+    private ArrayList<String> arrayList;
+    private ArrayAdapter<String> adapter;
+    //////////////////////////////////////
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +61,8 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
                 startActivity(new Intent(SubjectChoicesActivity.this, RegisterUserActivity.class));
             }
         });
+
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -86,6 +97,8 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
         medicina_btn = findViewById(R.id.medicina_btn);
         drzavna_matura__btn = findViewById(R.id.drzavna_matura__btn);
         pravo_btn = findViewById(R.id.pravo_btn);
+        pregled_predmeta = findViewById(R.id.pregled_predmeta);
+
 
 
         fizika_btn.setOnClickListener(new View.OnClickListener() {
@@ -359,6 +372,14 @@ public class SubjectChoicesActivity<Checkbox> extends AppCompatActivity {
                 BottomSheetMatura bottomSheet = new BottomSheetMatura();
                 bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+
+        pregled_predmeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SubjectChoicesActivity.this, ConfirmSubjectsActivity.class);
+                startActivity(intent);
             }
         });
 

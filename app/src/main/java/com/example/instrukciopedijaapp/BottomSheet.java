@@ -1,5 +1,6 @@
 package com.example.instrukciopedijaapp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -83,4 +84,5 @@ public class BottomSheet extends BottomSheetDialogFragment {
         return view;
 
     }
+
 }
