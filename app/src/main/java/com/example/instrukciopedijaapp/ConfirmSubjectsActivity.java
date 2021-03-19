@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,16 +40,60 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(ConfirmSubjectsActivity.this, android.R.layout.simple_list_item_1, arrayList);
         list_id = findViewById(R.id.list_id);
         list_id.setAdapter(arrayAdapter);
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).child("Predmeti");
 
 
         mDatabase.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                for (DataSnapshot subjectssnapshot: snapshot.getChildren()){
-                    String value = subjectssnapshot.child("Predmeti").getValue(String.class);
-                    arrayList.add(value);
-                }
+                    Object value = snapshot.getKey();
+                    String valstring = value.toString();
+                    String def = "def";
+                    if(value != null){
+                        if(valstring.contains("Njemacki")) {
+                            if(valstring.contains("_os")){
+                                def = "Njemački za osnovnu školu";
+                                arrayList.add(def);
+                                arrayAdapter.notifyDataSetChanged();
+                            }
+                            if(valstring.contains("_ss")){
+                                def = "Njemački za srednju školu";
+                                arrayList.add(def);
+                                arrayAdapter.notifyDataSetChanged();
+                            }
+                            if(valstring.contains("_fax")){
+                                def = "Njemački za fakultet";
+                                arrayList.add(def);
+                                arrayAdapter.notifyDataSetChanged();
+                            }
+                        }
+                        if(valstring.contains("Lektire")) {
+                                def = "Lektire";
+                                arrayList.add(def);
+                                arrayAdapter.notifyDataSetChanged();
+                        }
+                        if(valstring.contains("Matematika")) {
+                            if(valstring.contains("_os")){
+                                def = "Matematika za osnovnu školu";
+                                arrayList.add(def);
+                                arrayAdapter.notifyDataSetChanged();
+                            }
+                            if(valstring.contains("_ss")){
+                                def = "Matematika za srednju školu";
+                                arrayList.add(def);
+                                arrayAdapter.notifyDataSetChanged();
+                            }
+                            if(valstring.contains("_fax")){
+                                def = "Matematika za fakultet";
+                                arrayList.add(def);
+                                arrayAdapter.notifyDataSetChanged();
+                            }
+                        }
+                       }
+                    else if(value == null){
+                        Toast.makeText(ConfirmSubjectsActivity.this, "null", Toast.LENGTH_SHORT).show();
+                    }
+
             }
 
             @Override
