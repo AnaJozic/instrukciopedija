@@ -6,11 +6,15 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AlphabetIndexer;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -31,7 +35,9 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
     private ArrayList<String> arrayList = new ArrayList<>();
     private ArrayAdapter<String> arrayAdapter;
     private FirebaseAuth mAuth;
+    AlertDialog alertDialog;
 
+    private Button btn_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +47,8 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
         String userId = user.getUid();
+
+        btn_back = findViewById(R.id.btn_back);
 
         arrayAdapter = new ArrayAdapter<String>(ConfirmSubjectsActivity.this, android.R.layout.simple_list_item_1, arrayList);
         list_id = findViewById(R.id.list_id);
@@ -476,7 +484,7 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 final int which_item = position;
-                new AlertDialog.Builder(ConfirmSubjectsActivity.this)
+                alertDialog = new AlertDialog.Builder(ConfirmSubjectsActivity.this, R.style.MyDialogTheme)
                         .setTitle("Jeste li sigurni?")
                         .setMessage("Želite li izbrisati predmet s liste?")
                         .setPositiveButton("Da", new DialogInterface.OnClickListener() {
@@ -491,7 +499,20 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
                             }
                         }).setNegativeButton("Ne", null)
                         .show();
-                return true;
+                 return true;
+            }
+        });
+
+        //alertDialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.gradStart));
+        //alertDialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.gradStart));
+
+
+
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConfirmSubjectsActivity.this, SubjectChoicesActivity.class);
+                startActivity(intent);
             }
         });
     }

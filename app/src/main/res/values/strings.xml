@@ -38,5 +38,6 @@
     <string name="fakultet">Fakultet</string>
     <string name="uredu">Uredu</string>
     <string name="izabrani_predmeti">Izabrani predmeti</string>
-    <string name="pregled_predmeta">Pregled predmeta</string>//username
+    <string name="pregled_predmeta">Pregled predmeta</string>
+    <string name="dobrodo_li">Dobrodošli</string>//username
 </resources>

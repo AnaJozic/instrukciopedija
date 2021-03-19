@@ -54,6 +54,7 @@ public class LoginActivity extends AppCompatActivity {
         zapamti_me = findViewById(R.id.zapamti_me);
         ne_sada = findViewById(R.id.ne_sada);
 
+
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
         String checkbox = preferences.getString("remember", "");
         if(checkbox.equals("true")){
@@ -71,6 +72,9 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUser();
+                email_login.getText().clear();
+                password_login.getText().clear();
+
             }
         });
 
@@ -171,6 +175,9 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        email_login.getText().clear();
+        password_login.getText().clear();
 
 
     }
