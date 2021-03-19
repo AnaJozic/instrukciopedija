@@ -2,9 +2,14 @@ package com.example.instrukciopedijaapp;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AlphabetIndexer;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -40,6 +45,7 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
         arrayAdapter = new ArrayAdapter<String>(ConfirmSubjectsActivity.this, android.R.layout.simple_list_item_1, arrayList);
         list_id = findViewById(R.id.list_id);
         list_id.setAdapter(arrayAdapter);
+        final ArrayList<String> keyList = new ArrayList<>();
         mDatabase = FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").child(userId).child("Predmeti");
 
 
@@ -47,6 +53,7 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                     Object value = snapshot.getKey();
+                    keyList.add(snapshot.getKey());
                     String valstring = value.toString();
                     String def = "def";
                     if(value != null){
@@ -462,6 +469,29 @@ public class ConfirmSubjectsActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        list_id.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                final int which_item = position;
+                new AlertDialog.Builder(ConfirmSubjectsActivity.this)
+                        .setTitle("Jeste li sigurni?")
+                        .setMessage("Želite li izbrisati predmet s liste?")
+                        .setPositiveButton("Da", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String item = arrayAdapter.getItem(position);
+                                arrayAdapter.remove(item);
+                                arrayAdapter.notifyDataSetChanged();
+                                //Delete item form Firebase database
+                                mDatabase.child(keyList.get(position)).removeValue();
+                                keyList.remove(position);
+                            }
+                        }).setNegativeButton("Ne", null)
+                        .show();
+                return true;
             }
         });
     }
