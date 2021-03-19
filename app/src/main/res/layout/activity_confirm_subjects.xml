@@ -8,21 +8,32 @@
     tools:context=".ConfirmSubjectsActivity"
     android:background="@drawable/grad_bg">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
 
-        <ListView
-            android:id="@+id/list_id"
-            android:layout_width="wrap_content"
-            android:layout_height="599dp"
-            android:layout_gravity="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            >
+
+            <Button
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+
+                android:background="@drawable/ic_back"
+                app:backgroundTint="#FFFFFF" />
+
+            <ListView
+                android:id="@+id/list_id"
+                android:layout_width="wrap_content"
+                android:layout_height="414dp"
+                android:layout_gravity="center" />
 
 
-    </LinearLayout>
+        </LinearLayout>
+
 
 </ScrollView>

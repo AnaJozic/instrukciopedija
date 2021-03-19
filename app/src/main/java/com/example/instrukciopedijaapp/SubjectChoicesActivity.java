@@ -177,6 +177,16 @@ public class SubjectChoicesActivity extends AppCompatActivity {
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
             }
         });
+        geografija_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Geografija");
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
 
         talijanski_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,6 +204,26 @@ public class SubjectChoicesActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Bundle args = new Bundle();
                 args.putString("predmet", "Engleski");
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+        ruski_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Ruski");
+                BottomSheet bottomSheet = new BottomSheet();
+                bottomSheet.setArguments(args);
+                bottomSheet.show(getSupportFragmentManager(), "TAG");
+            }
+        });
+        ostali_strani_jezici.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Bundle args = new Bundle();
+                args.putString("predmet", "Ostali jezici");
                 BottomSheet bottomSheet = new BottomSheet();
                 bottomSheet.setArguments(args);
                 bottomSheet.show(getSupportFragmentManager(), "TAG");
