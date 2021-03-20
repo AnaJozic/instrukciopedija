@@ -38,6 +38,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+
+
     <EditText
         android:id="@+id/editText"
         android:layout_width="286dp"
@@ -55,7 +58,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
-        tools:targetApi="lollipop" />
+        tools:targetApi="lollipop"
+        android:drawableLeft="@drawable/ic_envelope" />
 
     <EditText
         android:id="@+id/editText2"
@@ -74,7 +78,8 @@
         app:layout_constraintStart_toStartOf="@+id/editText"
         app:layout_constraintTop_toBottomOf="@+id/editText"
         tools:ignore="MissingConstraints"
-        tools:targetApi="lollipop" />
+        tools:targetApi="lollipop"
+        android:drawableLeft="@drawable/ic_padlock" />
 
     <Button
         android:id="@+id/button_prijava"
@@ -95,8 +100,33 @@
         app:layout_constraintTop_toBottomOf="@+id/editText2"
         app:layout_constraintVertical_bias="0.045" />
 
+
+    <CheckBox
+        android:id="@+id/zapamti_me"
+        android:layout_width="wrap_content"
+        android:layout_height="25dp"
+        android:layout_marginStart="164dp"
+        android:layout_marginLeft="164dp"
+        android:layout_marginBottom="268dp"
+        android:button="@null"
+        android:drawableStart="@drawable/checkbox_zapamti_me"
+        android:drawableLeft="@drawable/checkbox_zapamti_me"
+        android:drawablePadding="10dp"
+        android:fontFamily="@font/chivo_light"
+        android:text="Zapamti me"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/button_forgotten_passsword"
+        app:layout_constraintTop_toBottomOf="@+id/button_forgotten_passsword"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_forgotten_passsword"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="286dp"
         android:layout_height="40dp"
@@ -118,28 +148,6 @@
         app:layout_constraintVertical_bias="0.0"
         tools:ignore="MissingConstraints" />
 
-
-    <CheckBox
-        android:id="@+id/zapamti_me"
-        android:layout_width="wrap_content"
-        android:layout_height="25dp"
-        android:button="@null"
-        android:drawableStart="@drawable/checkbox_zapamti_me"
-        android:drawableLeft="@drawable/checkbox_zapamti_me"
-        android:drawablePadding="10dp"
-        android:fontFamily="@font/chivo_light"
-        android:text="Zapamti me"
-        android:textColor="@color/white"
-        android:textSize="16dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.0"
-        tools:ignore="MissingConstraints" />
-
     <Button
         android:id="@+id/button_regInstruktor"
         android:layout_width="286dp"
@@ -153,17 +161,17 @@
         app:backgroundTint="#14000000"
         app:backgroundTintMode="add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="@+id/button_forgotten_passsword"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toBottomOf="@+id/button"
+        app:layout_constraintStart_toStartOf="@+id/button_forgotten_passsword"
+        app:layout_constraintTop_toBottomOf="@+id/button_forgotten_passsword"
         app:layout_constraintVertical_bias="0.457" />
 
     <Button
         android:id="@+id/reg"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="319dp"
-        android:layout_height="57dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@null"
         android:drawablePadding="20dp"

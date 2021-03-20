@@ -39,12 +39,5 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-
-        HashMap<String, Object> map = new HashMap<>();
-        map.put("Username", "Ana");
-        map.put("Email", "ana.jossic@gmail.com");
-
-        FirebaseDatabase.getInstance().getReference().child("User").child("Instruktor").updateChildren(map);
-
     }
 }

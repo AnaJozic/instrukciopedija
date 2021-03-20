@@ -1,21 +1,26 @@
 package com.example.instrukciopedijaapp;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.opengl.Visibility;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.util.LogPrinter;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -29,7 +34,8 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     EditText email_login, password_login;
-    Button button_prijava, button, button_regInstruktor;
+    Button button_prijava, button_regInstruktor;
+    private Button button_forgotten_passsword;
     Button reg, ne_sada;
     CheckBox zapamti_me;
 
@@ -48,11 +54,25 @@ public class LoginActivity extends AppCompatActivity {
         email_login = findViewById(R.id.editText);
         password_login = findViewById(R.id.editText2);
         button_prijava = findViewById(R.id.button_prijava);
-        button = findViewById(R.id.button);
+        button_forgotten_passsword = findViewById(R.id.button_forgotten_passsword);
         button_regInstruktor = findViewById(R.id.button_regInstruktor);
         reg = findViewById(R.id.reg);
         zapamti_me = findViewById(R.id.zapamti_me);
         ne_sada = findViewById(R.id.ne_sada);
+
+
+
+
+        button_forgotten_passsword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(LoginActivity.this, ForgotPassword.class);
+                startActivity(i);
+            }
+        });
+
+
+
 
 
         SharedPreferences preferences = getSharedPreferences("checkbox", MODE_PRIVATE);
@@ -72,8 +92,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loginUser();
-                email_login.getText().clear();
-                password_login.getText().clear();
+
 
             }
         });
@@ -168,6 +187,8 @@ public class LoginActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     Toast.makeText(LoginActivity.this, "Uspješna prijava!", Toast.LENGTH_LONG).show();
+                    email_login.getText().clear();
+                    password_login.getText().clear();
                 }
                 else{
                     Toast.makeText(LoginActivity.this, "Neuspješna prijava!", Toast.LENGTH_LONG).show();
@@ -176,12 +197,8 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        email_login.getText().clear();
-        password_login.getText().clear();
 
 
     }
-
-
 
 }
