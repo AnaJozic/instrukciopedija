@@ -122,19 +122,66 @@ You can also write about your pay rate per hour and your experience in teaching 
 
     </LinearLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="410dp"
-        >
 
-        <androidx.cardview.widget.CardView
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="440dp">
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/button_one"/>
+            >
 
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:columnCount="3">
 
+                <RelativeLayout
+                    android:id="@+id/relative_views">
 
-    </androidx.recyclerview.widget.RecyclerView>
+                <View
+                    android:id="@+id/predmet_view"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="20dp"
+                    android:background="@drawable/button_one"
+                    android:backgroundTint="#00FFFFFF"
+                    android:backgroundTintMode="add"
+                    android:drawableTop="@drawable/ic_atom"
+                    android:text="#"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/chivo_bold"
+                    android:padding="3dp"
+                    android:layout_gravity="center"
+                    app:backgroundTint="#00FFFFFF"
+                    app:backgroundTintMode="add" />
+
+                    <TextView
+                        android:id="@+id/predmet_view_text"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="20dp"
+                        android:text="#"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/chivo_bold"
+                        android:gravity="center" />
+
+                </RelativeLayout>
+
+            </GridLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </RelativeLayout>
